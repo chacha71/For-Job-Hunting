@@ -1,11 +1,358 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的求职页面</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王琳菡 · 大客户销售作品集</title>
+<style>
+:root {
+  --bg: #F6F4EF;
+  --bg-card: #FFFFFF;
+  --ink: #1C1B19;
+  --ink-soft: #3D3A35;
+  --muted: #8A857C;
+  --faint: #B5B0A6;
+  --accent: #9A3B2E;
+  --accent-soft: #C0523F;
+  --line: #E2DDD3;
+  --serif: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 顶部导航 */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding: 18px 48px;
+  background: rgba(246,244,239,0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .brand { font-family: var(--serif); font-weight:700; font-size:17px; letter-spacing:0.5px; }
+.nav .brand span { color: var(--accent); }
+.nav .links { display:flex; gap:28px; }
+.nav .links a {
+  text-decoration:none; color:var(--muted); font-size:13px; letter-spacing:1px;
+  transition: color 0.2s;
+}
+.nav .links a:hover { color: var(--ink); }
+
+/* 通用容器 */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+/* Hero */
+.hero {
+  padding: 160px 0 100px;
+  border-bottom: 1px solid var(--line);
+}
+.hero .eyebrow {
+  font-size: 12px; letter-spacing: 3px; color: var(--accent);
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: 64px; line-height: 1.15; font-weight: 700;
+  letter-spacing: 2px; margin-bottom: 20px;
+}
+.hero h1 .dot { color: var(--accent); }
+.hero .tagline {
+  font-size: 20px; color: var(--ink-soft); font-weight: 400; max-width: 620px;
+  font-family: var(--serif);
+}
+.hero .meta {
+  margin-top: 40px; display:flex; gap: 32px; flex-wrap:wrap;
+}
+.hero .meta .item { font-size: 13px; color: var(--muted); letter-spacing: 0.5px; }
+.hero .meta .item strong { color: var(--ink); font-weight: 600; }
+
+/* 章节通用 */
+section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+.sec-head { display:flex; align-items:baseline; gap: 18px; margin-bottom: 48px; }
+.sec-head .num {
+  font-family: var(--serif); font-size: 14px; color: var(--accent);
+  font-weight:700; letter-spacing:1px;
+}
+.sec-head h2 {
+  font-family: var(--serif); font-size: 32px; font-weight: 700; letter-spacing: 1px;
+}
+.sec-head .en { font-size: 12px; color: var(--faint); letter-spacing: 2px; margin-left:auto; }
+
+/* 简介 */
+.intro-text { font-size: 17px; color: var(--ink-soft); max-width: 720px; line-height: 2; }
+
+/* 核心能力 */
+.cap-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.cap {
+  background: var(--bg-card); padding: 40px 36px; transition: background 0.25s;
+}
+.cap:hover { background: #FBF9F5; }
+.cap .cap-num { font-family: var(--serif); font-size: 13px; color: var(--accent); font-weight:700; }
+.cap h3 { font-family: var(--serif); font-size: 22px; margin: 14px 0 10px; font-weight: 700; }
+.cap p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+/* 作品 */
+.work-list { display:flex; flex-direction:column; }
+.work {
+  display:grid; grid-template-columns: 90px 1fr auto; gap: 28px; align-items:center;
+  padding: 34px 0; border-bottom: 1px solid var(--line);
+  text-decoration:none; color: inherit;
+  transition: transform 0.2s;
+}
+.work:last-child { border-bottom: none; }
+.work:hover { transform: translateX(6px); }
+.work .w-idx { font-family: var(--serif); font-size: 32px; color: var(--faint); font-weight:700; }
+.work .w-body h3 { font-family: var(--serif); font-size: 21px; font-weight:700; margin-bottom: 6px; }
+.work .w-body .w-desc { font-size: 14px; color: var(--muted); }
+.work .w-body .w-tags { margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap; }
+.work .w-body .w-tags span {
+  font-size: 11px; letter-spacing:1px; color: var(--accent);
+  border: 1px solid var(--line); padding: 3px 10px; border-radius: 2px;
+}
+.work .w-arrow { font-size: 22px; color: var(--faint); transition: color 0.2s; }
+.work:hover .w-arrow { color: var(--accent); }
+
+/* 项目经历时间线 */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before { content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background: var(--line); }
+.tl-item { position:relative; padding: 0 0 40px 24px; }
+.tl-item:last-child { padding-bottom:0; }
+.tl-item::before {
+  content:""; position:absolute; left:-28px; top:8px; width:9px; height:9px;
+  background: var(--accent); border-radius:50%;
+}
+.tl-item .tl-time { font-size:12px; color:var(--muted); letter-spacing:1px; }
+.tl-item h3 { font-family: var(--serif); font-size:18px; margin:6px 0 6px; font-weight:700; }
+.tl-item p { font-size:14px; color:var(--muted); }
+
+/* 联系 */
+.contact { padding: 80px 0 120px; }
+.contact .c-row { display:flex; gap:40px; flex-wrap:wrap; margin-top: 32px; }
+.contact .c-item { flex:1; min-width:200px; }
+.contact .c-item .c-label { font-size:11px; letter-spacing:2px; color:var(--faint); margin-bottom:8px; text-transform:uppercase; }
+.contact .c-item a, .contact .c-item span { font-size:16px; color:var(--ink); text-decoration:none; font-family:var(--serif); }
+.contact .c-item a:hover { color: var(--accent); }
+
+footer {
+  padding: 32px 0; border-top: 1px solid var(--line);
+  text-align:center; font-size:12px; color: var(--faint); letter-spacing:1px;
+}
+
+/* 加载动画 */
+.reveal { opacity:0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform: translateY(0); }
+
+@media (max-width: 720px) {
+  .nav { padding: 14px 20px; }
+  .nav .links { display:none; }
+  .hero { padding: 120px 0 70px; }
+  .hero h1 { font-size: 40px; }
+  .cap-grid { grid-template-columns: 1fr; }
+  .work { grid-template-columns: 1fr; gap:12px; }
+  .work .w-idx { font-size: 24px; }
+  .work .w-arrow { display:none; }
+}
+</style>
 </head>
 <body>
-    <h1>GitHub Pages 部署成功！</h1>
-    <p>这是我的求职专属页面</p>
+
+<nav class="nav">
+  <div class="brand">王琳菡<span>·</span>作品集</div>
+  <div class="links">
+    <a href="#about">关于</a>
+    <a href="#capability">能力</a>
+    <a href="#work">作品</a>
+    <a href="#experience">经历</a>
+    <a href="#contact">联系</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow reveal">Key Account Sales · Commercialization</div>
+    <h1 class="reveal">王琳菡<span class="dot">。</span></h1>
+    <p class="tagline reveal">大客户销售 · 渠道销售 · 商业化方向。四年电信 ToB 销售一线，擅长把复杂的商业方案，讲成老板听得懂、客户愿意买的一句话。</p>
+    <div class="meta reveal">
+      <div class="item"><strong>2027 届</strong> 应届生</div>
+      <div class="item"><strong>重庆交通大学</strong> 城乡规划</div>
+      <div class="item"><strong>可实习</strong> 立即到岗 · 3 个月+</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="num">01</span>
+      <h2>关于我</h2>
+      <span class="en">ABOUT</span>
+    </div>
+    <p class="intro-text reveal">
+      多年寒暑假深耕电信政企销售一线，完整走过需求挖掘、方案设计、项目交付的全流程。从 ToC 一线推广到 ToB 政企运营，再到华为慧通的政企企业购外拓——我始终在做的，是帮客户把"模糊的需求"变成"清晰的方案"，再用数据和呈现说服决策者买单。
+    </p>
+  </div>
+</section>
+
+<section id="capability">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="num">02</span>
+      <h2>核心能力</h2>
+      <span class="en">CAPABILITY</span>
+    </div>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <div class="cap-num">/ 01</div>
+        <h3>ToB 销售</h3>
+        <p>需求挖掘、方案撰写、竞品分析、商务跟单、项目推进。跟进过政企大客户与中小微企业两条完全不同的打法。</p>
+      </div>
+      <div class="cap reveal">
+        <div class="cap-num">/ 02</div>
+        <h3>商务呈现</h3>
+        <p>擅长政企商务方案与客户汇报 PPT。给老板看的东西，要结构清晰、数据说话、一页抓住重点。</p>
+      </div>
+      <div class="cap reveal">
+        <div class="cap-num">/ 03</div>
+        <h3>数据思维</h3>
+        <p>客户分层、决策链分析、ROI 测算。销售不是靠感觉，是靠数据判断"谁值得跟进、投一块赚几块"。</p>
+      </div>
+      <div class="cap reveal">
+        <div class="cap-num">/ 04</div>
+        <h3>AI 工具应用</h3>
+        <p>用生成式 AI 和低代码工具提效，为客户搭建轻量化办公页面，把重复劳动交给工具，把精力留给客户。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="num">03</span>
+      <h2>代表作品</h2>
+      <span class="en">WORK</span>
+    </div>
+    <div class="work-list">
+      <a class="work reveal" href="https://chacha71.github.io/sales-toolkit/" target="_blank">
+        <div class="w-idx">01</div>
+        <div class="w-body">
+          <h3>华为门店运营工具箱</h3>
+          <div class="w-desc">为门店搭建线上口碑运营工具：高德好评 + 小红书内容，带防重复机制，获门店采用。</div>
+          <div class="w-tags"><span>线上运营</span><span>防重复机制</span><span>扫码即用</span></div>
+        </div>
+        <div class="w-arrow">→</div>
+      </a>
+      <a class="work reveal" href="https://chacha71.github.io/sales-efficiency-tools/" target="_blank">
+        <div class="w-idx">02</div>
+        <div class="w-body">
+          <h3>ToB 销售提效工具</h3>
+          <div class="w-desc">面向销售场景的 AI 驱动效率工具集，把客户跟进、数据整理等重复劳动自动化。</div>
+          <div class="w-tags"><span>AI 工具</span><span>效率提升</span></div>
+        </div>
+        <div class="w-arrow">→</div>
+      </a>
+      <div class="work reveal">
+        <div class="w-idx">03</div>
+        <div class="w-body">
+          <h3>华为慧通述职答辩 PPT</h3>
+          <div class="w-desc">面向门店管理层的 16 页述职汇报，结构化叙事 + 数据化呈现，体现商务汇报能力。</div>
+          <div class="w-tags"><span>商务呈现</span><span>结构化叙事</span></div>
+        </div>
+        <div class="w-arrow">→</div>
+      </div>
+      <div class="work reveal">
+        <div class="w-idx">04</div>
+        <div class="w-body">
+          <h3>政企 5G + 云网融合项目</h3>
+          <div class="w-desc">参与客户对接、需求梳理与 ROI 分析，推动项目签约交付，理解大项目的长周期协同。</div>
+          <div class="w-tags"><span>政企大客户</span><span>项目交付</span></div>
+        </div>
+        <div class="w-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="num">04</span>
+      <h2>经历</h2>
+      <span class="en">EXPERIENCE</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-time">2026.07 – 2026.08</div>
+        <h3>华为慧通 · 新零售管培生</h3>
+        <p>政企企业购外拓 · 门店运营 · 线上口碑运营</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-time">2024.06 – 2026.03</div>
+        <h3>襄阳市电信公司 · ToB 政企销售</h3>
+        <p>中小微企业上云 · 客户精细化运营 · 数据驱动</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-time">2023.01 – 2024.03</div>
+        <h3>随州市电信公司 · ToB 政企销售运营</h3>
+        <p>政企大客户跟进 · 项目全流程交付</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-time">2022.06 – 2022.09</div>
+        <h3>随州市电信公司 · ToC 销售</h3>
+        <p>校园/社区推广 · 破冰与成交</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="num">05</span>
+      <h2>联系我</h2>
+      <span class="en">CONTACT</span>
+    </div>
+    <div class="c-row">
+      <div class="c-item reveal">
+        <div class="c-label">电话</div>
+        <span>189 0867 6128</span>
+      </div>
+      <div class="c-item reveal">
+        <div class="c-label">邮箱</div>
+        <a href="mailto:6821108@qq.com">6821108@qq.com</a>
+      </div>
+      <div class="c-item reveal">
+        <div class="c-label">GitHub</div>
+        <a href="https://github.com/chacha71" target="_blank">github.com/chacha71</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">王琳菡 · 大客户销售求职作品集 · 2026</div>
+</footer>
+
+<script>
+// 滚动渐入动画
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
