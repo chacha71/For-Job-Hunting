@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
@@ -20,7 +20,7 @@ const { Content } = Layout;
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout style={{ minHeight: '100vh' }}>
         <Sidebar />
         <Layout style={{ marginLeft: 220 }}>
@@ -44,7 +44,7 @@ const App: React.FC = () => {
           </Content>
         </Layout>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
