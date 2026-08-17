@@ -4,6 +4,7 @@ import { Layout } from 'antd';
 import Sidebar from './components/Layout/Sidebar';
 import Header from './components/Layout/Header';
 import Dashboard from './pages/Dashboard';
+import About from './pages/About';
 import Customers from './pages/Customers';
 import FollowUps from './pages/FollowUps';
 import Analysis from './pages/Analysis';
@@ -26,7 +27,8 @@ const App: React.FC = () => {
           <Header />
           <Content style={{ margin: '24px', padding: '24px', background: '#fff', minHeight: 280 }}>
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+              <Route path="/" element={<About />} />
+              <Route path="/about" element={<About />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/followups" element={<FollowUps />} />

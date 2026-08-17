@@ -15,13 +15,19 @@ import {
   CalendarOutlined,
   MessageOutlined,
   SafetyOutlined,
-  ClusterOutlined
+  ClusterOutlined,
+  IdcardOutlined
 } from '@ant-design/icons';
 
 const Sidebar: React.FC = () => {
   const location = useLocation();
   
   const menuItems = [
+    {
+      key: '/about',
+      icon: <IdcardOutlined />,
+      label: <Link to="/about">关于我</Link>,
+    },
     {
       key: '/dashboard',
       icon: <DashboardOutlined />,
