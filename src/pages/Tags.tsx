@@ -102,6 +102,7 @@ const Tags: React.FC = () => {
       title: '标签名称',
       dataIndex: 'name',
       key: 'name',
+      width: 160,
       render: (name: string, record: TagType) => (
         <Tag color={record.color}>{name}</Tag>
       ),
@@ -110,6 +111,7 @@ const Tags: React.FC = () => {
       title: '类别',
       dataIndex: 'category',
       key: 'category',
+      width: 100,
       render: (category: string) => {
         const categoryMap: Record<string, string> = {
           'requirement': '需求标签',
@@ -124,6 +126,7 @@ const Tags: React.FC = () => {
       title: '颜色',
       dataIndex: 'color',
       key: 'color',
+      width: 80,
       render: (color: string) => (
         <div style={{
           width: '20px',
@@ -144,6 +147,7 @@ const Tags: React.FC = () => {
     {
       title: '操作',
       key: 'action',
+      width: 230,
       render: (_: any, record: TagType) => (
         <Space size="small">
           <Button
@@ -201,6 +205,7 @@ const Tags: React.FC = () => {
         dataSource={tags}
         rowKey="id"
         pagination={{ pageSize: 10 }}
+        tableLayout="fixed"
       />
 
       <Modal

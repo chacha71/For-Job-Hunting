@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <Sidebar />
         <Layout style={{ marginLeft: 220 }}>
           <Header />
-          <Content style={{ margin: '24px', padding: '24px', background: '#fff', minHeight: 280 }}>
+          <Content style={{ padding: '16px 24px', background: '#fff', minHeight: 280 }}>
             <Routes>
               <Route path="/" element={<About />} />
               <Route path="/about" element={<About />} />
