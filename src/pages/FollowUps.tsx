@@ -223,7 +223,7 @@ const FollowUps: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ margin: 0 }}>跟进台账</h2>
         <Space>
@@ -265,7 +265,6 @@ const FollowUps: React.FC = () => {
         columns={columns}
         dataSource={followUps}
         rowKey="id"
-        scroll={{ x: 1000 }}
       />
 
       <Modal

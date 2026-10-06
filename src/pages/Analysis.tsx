@@ -135,7 +135,7 @@ const Analysis: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <h2 style={{ marginBottom: '24px' }}>智能分析</h2>
       
       <Row gutter={[24, 24]} style={{ marginBottom: '24px' }}>
@@ -189,7 +189,6 @@ const Analysis: React.FC = () => {
           dataSource={customers}
           rowKey="id"
           pagination={{ pageSize: 10 }}
-          scroll={{ x: 1200 }}
         />
       </Card>
     </div>

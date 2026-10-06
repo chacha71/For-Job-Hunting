@@ -163,7 +163,7 @@ const Competitors: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ margin: 0 }}>竞品分析</h2>
         <Space>
@@ -188,7 +188,6 @@ const Competitors: React.FC = () => {
         dataSource={competitors}
         rowKey="id"
         pagination={{ pageSize: 10 }}
-        scroll={{ x: 1200 }}
       />
 
       <Modal

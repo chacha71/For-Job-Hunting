@@ -20,7 +20,6 @@ const Header: React.FC = () => {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginLeft: 220,
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
     }}>
       <div style={{ fontSize: '18px', fontWeight: 'bold' }}>

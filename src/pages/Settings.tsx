@@ -32,7 +32,7 @@ const Settings: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <Title level={2} style={{ marginBottom: '24px' }}>系统设置</Title>
       
       <Space direction="vertical" size="large" style={{ width: '100%' }}>

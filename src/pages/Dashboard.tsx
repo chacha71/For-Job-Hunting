@@ -19,16 +19,13 @@ const Dashboard: React.FC = () => {
   };
 
   const tierOption = {
-    title: {
-      text: '客户分层分布',
-      left: 'center',
-    },
     tooltip: {
       trigger: 'item',
     },
     legend: {
-      orient: 'vertical',
-      left: 'left',
+      orient: 'horizontal',
+      bottom: 0,
+      left: 'center',
     },
     series: [
       {
@@ -82,16 +79,13 @@ const Dashboard: React.FC = () => {
   };
 
   const statusOption = {
-    title: {
-      text: '客户状态分布',
-      left: 'center',
-    },
     tooltip: {
       trigger: 'item',
     },
     legend: {
-      orient: 'vertical',
-      left: 'left',
+      orient: 'horizontal',
+      bottom: 0,
+      left: 'center',
     },
     series: [
       {
@@ -226,16 +220,13 @@ const Dashboard: React.FC = () => {
 
   // 规模分布图
   const scaleOption = {
-    title: {
-      text: '客户规模分布',
-      left: 'center',
-    },
     tooltip: {
       trigger: 'item',
     },
     legend: {
-      orient: 'vertical',
-      left: 'left',
+      orient: 'horizontal',
+      bottom: 0,
+      left: 'center',
     },
     series: [
       {
@@ -300,7 +291,7 @@ const Dashboard: React.FC = () => {
   ];
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <h2 style={{ marginBottom: '24px' }}>数据看板</h2>
       
       {/* 筛选区域 */}

@@ -56,7 +56,7 @@ const About: React.FC = () => {
               <Tag>可立即到岗 · 3 个月+</Tag>
             </Space>
             <Paragraph style={{ color: '#666', marginBottom: 0, fontSize: 15 }}>
-              多年寒暑假深耕电信政企销售一线，近期在华为慧通新零售管培生岗。完整走过从 ToC 一线推广、ToB 政企运营，到门店运营与政企企业购外拓的成长路径。我始终在做的，是帮客户把「模糊的需求」变成「清晰的方案」，再用数据和呈现说服决策者买单。
+              重庆交通大学城乡规划专业 2027 届本科生，大学四年寒暑假深耕电信 ToB 政企销售一线，近期在华为慧通新零售管培生岗。华为期间累计 7 场企业购签约、覆盖率 98%+，用 AI 搭的门店运营工具箱沉淀为标准 SOP、精准触达 2000+ 人次、间接达成 70 余单。完整走过 ToC 一线推广、ToB 政企运营到门店运营与政企企业购外拓，擅长用数据和呈现把「模糊的需求」变成「清晰的方案」、说服决策者买单。
             </Paragraph>
           </Col>
         </Row>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
                       <Text strong>华为慧通 · 新零售管培生</Text>
                       <div style={{ color: '#999', fontSize: 12 }}>2026.07 – 2026.08</div>
                       <div style={{ color: '#666', fontSize: 13 }}>
-                        政企企业购外拓（轨道交通集团，覆盖 300+ 人）· 门店运营 · 线上口碑运营
+                        跟进重庆轨道交通集团上门购，分城市/部门/产品 4 维度分析签约，累计 7 场签约、覆盖率 98%+；用 Claude Code 搭门店运营工具箱沉淀为标准 SOP，精准触达 2000+ 人次、间接达成 70 余单
                       </div>
                     </>
                   ),
@@ -102,9 +102,9 @@ const About: React.FC = () => {
                   children: (
                     <>
                       <Text strong>襄阳市电信公司 · ToB 政企销售</Text>
-                      <div style={{ color: '#999', fontSize: 12 }}>2024.06 – 2026.03（寒暑假）</div>
+                      <div style={{ color: '#999', fontSize: 12 }}>2024 – 2026（寒暑假）</div>
                       <div style={{ color: '#666', fontSize: 13 }}>
-                        中小微企业上云 · 客户精细化运营 · 数据驱动增长
+                        配合团队完成 12 家目标客户需求调研与方案设计，协助签约 8 家新客户；搭建 ToB 销售数据看板，支撑团队超额 8% 完成月度目标
                       </div>
                     </>
                   ),
@@ -114,9 +114,9 @@ const About: React.FC = () => {
                   children: (
                     <>
                       <Text strong>随州市电信公司 · ToB 政企销售运营</Text>
-                      <div style={{ color: '#999', fontSize: 12 }}>2023.01 – 2024.03（寒暑假）</div>
+                      <div style={{ color: '#999', fontSize: 12 }}>2023 – 2024（寒暑假）</div>
                       <div style={{ color: '#666', fontSize: 13 }}>
-                        政企大客户跟进 · 项目全流程交付
+                        参与跟进 15 家重点政企客户，搭建客户画像与决策链分析，覆盖线索挖掘到交付全流程，协助 12 笔订单按期交付
                       </div>
                     </>
                   ),
@@ -126,9 +126,9 @@ const About: React.FC = () => {
                   children: (
                     <>
                       <Text strong>随州市电信公司 · ToC 销售</Text>
-                      <div style={{ color: '#999', fontSize: 12 }}>2022.06 – 2022.09</div>
+                      <div style={{ color: '#999', fontSize: 12 }}>2022 暑期</div>
                       <div style={{ color: '#666', fontSize: 13 }}>
-                        校园/社区推广 · 破冰与成交 · 累计触达 1000+
+                        校园/社区电话卡推广，场景化沟通设计，累计触达 1000+，独立完成破冰、需求匹配到成交全流程
                       </div>
                     </>
                   ),

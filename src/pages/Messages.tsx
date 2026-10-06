@@ -341,7 +341,7 @@ const Messages: React.FC = () => {
   const readMessages = messages.filter(m => m.status === 'read').length;
 
   return (
-    <div style={{ padding: '24px', marginLeft: '220px', marginTop: '64px', minHeight: 'calc(100vh - 64px)' }}>
+    <div>
       <h2 style={{ marginBottom: '24px' }}>消息推送</h2>
 
       {/* 统计卡片 */}
