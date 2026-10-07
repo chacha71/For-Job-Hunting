@@ -219,8 +219,8 @@ const Settings: React.FC = () => {
         <Card title="系统信息">
           <Space direction="vertical" size="small">
             <Text><strong>系统版本：</strong>V1.0.0</Text>
-            <Text><strong>更新时间：</strong>2024-03-08</Text>
-            <Text><strong>技术支持：</strong>Tencent CodeBuddy</Text>
+            <Text><strong>更新时间：</strong>2026-10-08</Text>
+            <Text><strong>技术支持：</strong>Claude Code</Text>
           </Space>
         </Card>
       </Space>
